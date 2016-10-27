@@ -71,7 +71,7 @@ const lillyAuth = (app, options) => {
       AUTH0_CLIENT_ID: (options && options.AUTH0_CLIENT_ID) || defaultConfig.AUTH0_CLIENT_ID,
       AUTH0_CLIENT_SECRET: (options && options.AUTH0_CLIENT_SECRET)
                         || defaultConfig.AUTH0_CLIENT_SECRET,
-      AUTH0_HOST: (options && options.AUTH0_HOST) || defaultConfig.AUTH0_HOST,
+      HOST: (options && options.HOST) || defaultConfig.HOST,
       AUTH0_CONNECTION: (options && options.AUTH0_CONNECTION) || defaultConfig.AUTH0_CONNECTION,
       CALLBACK_URL: (options && options.CALLBACK_URL)
                         || defaultConfig.CALLBACK_URL,
@@ -86,7 +86,7 @@ const lillyAuth = (app, options) => {
       domain: config.AUTH0_DOMAIN,
       clientID: config.AUTH0_CLIENT_ID,
       clientSecret: config.AUTH0_CLIENT_SECRET,
-      callbackURL: config.AUTH0_HOST + config.CALLBACK_URL,
+      callbackURL: config.HOST + config.CALLBACK_URL,
     }, (accessToken, refreshToken, extraParams, profile, done) => done(null, profile));
 
     passport.use(strategy);
